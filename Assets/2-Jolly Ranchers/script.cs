@@ -17,12 +17,17 @@ namespace JollyRanchers{
 
 		private int spaceCount;
 
+		private bool isWin = false;
+
 		private void Start(){
 			float difficulty = Managers.MinigamesManager.GetCurrentMinigameDifficulty();
 			DifficultyText.text = $"Current Difficulty: {difficulty.ToString()}";
 			spaceCount = Mathf.CeilToInt(SpacePressesNeeded.Evaluate(difficulty));
 
 			UIText.text = $"Press space {spaceCount} times!";
+			UIText.text = $"Press space {spaceCount} times! | {UIText.transform.position}";
+			
+			UIText.transform.position = new Vector3(490,334,0);
 			
 			AudioSource loop = Managers.AudioManager.CreateAudioSource();
 			loop.loop = true;
@@ -31,14 +36,13 @@ namespace JollyRanchers{
 		}
 
 		private void Update(){
-			if (Input.GetButtonDown("Space"))
-			{
+			if (Input.GetButtonDown("Space")){
 				spaceCount--;
 				UIText.text = $"Press space {spaceCount} times!";
+				UIText.text = $"Press space {spaceCount} times! | {UIText.transform.position}";
 			}
 
-			if(spaceCount == 0)
-			{
+			if(spaceCount == 0){
 				UIText.text = winText;
 
 				AudioSource win = Managers.AudioManager.CreateAudioSource();

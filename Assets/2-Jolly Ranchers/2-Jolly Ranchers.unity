@@ -290,7 +290,7 @@ RectTransform:
   - {fileID: 1409102169}
   - {fileID: 724795982}
   - {fileID: 616865536}
-  m_Father: {fileID: 2050331914}
+  m_Father: {fileID: 2047592955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -719,7 +719,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409102168}
   m_CullTransparentMesh: 0
---- !u!1 &2050331912
+--- !u!1 &2047592953
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -727,25 +727,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2050331914}
-  - component: {fileID: 2050331913}
+  - component: {fileID: 2047592955}
+  - component: {fileID: 2047592954}
   m_Layer: 0
-  m_Name: Example GameObject (DELETE)
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2050331913
+--- !u!114 &2047592954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050331912}
+  m_GameObject: {fileID: 2047592953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 320a75bdc860cc04fa42675cebbe417f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aad9925975f8eb42bb8bc6d1b432ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DifficultyText: {fileID: 616865538}
@@ -754,39 +754,39 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 15
-      inSlope: 35
-      outSlope: 35
-      tangentMode: 34
+      time: 0.047221363
+      value: 10.20559
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 50
-      inSlope: 35
-      outSlope: 35
-      tangentMode: 34
+      time: 0.9999895
+      value: 30.036379
+      inSlope: 0.0977099
+      outSlope: 0.0977099
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.67613184
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  winText: You win!!!
+  winText: You Win!
   loopSound: {fileID: 8300000, guid: 6d6d6da655193ab45929e932cfbfd525, type: 3}
   winSound: {fileID: 8300000, guid: 338661444fb70164d816238cbaa9fdfa, type: 3}
---- !u!4 &2050331914
+--- !u!4 &2047592955
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050331912}
+  m_GameObject: {fileID: 2047592953}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 433.97238, y: 263.71613, z: -103.09018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -799,4 +799,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 246273527}
   - {fileID: 910153096}
-  - {fileID: 2050331914}
+  - {fileID: 2047592955}
