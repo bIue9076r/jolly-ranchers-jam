@@ -892,8 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aad9925975f8eb42bb8bc6d1b432ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DifficultyText: {fileID: 616865538}
-  UIText: {fileID: 724795983}
   SpacePressesNeeded:
     serializedVersion: 2
     m_Curve:
@@ -918,9 +916,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  player: {fileID: 593440331}
+  DifficultyText: {fileID: 616865538}
+  UIText: {fileID: 724795983}
   winText: You Win!
-  loopSound: {fileID: 8300000, guid: 6d6d6da655193ab45929e932cfbfd525, type: 3}
+  player: {fileID: 593440331}
+  loopSound: {fileID: 8300000, guid: 4abf22bbdf387144391c54df9ba368e1, type: 3}
   winSound: {fileID: 8300000, guid: 338661444fb70164d816238cbaa9fdfa, type: 3}
 --- !u!4 &2047592955
 Transform:
