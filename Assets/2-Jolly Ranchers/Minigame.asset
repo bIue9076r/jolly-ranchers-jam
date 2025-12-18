@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 2-Jolly Ranchers
   minigameType: 0
-  gameTime: 0
+  gameTime: 6857
   instruction: Catch!
   title: Creative Name
   creditsText: '-- Programmers
