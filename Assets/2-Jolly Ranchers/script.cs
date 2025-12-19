@@ -14,7 +14,10 @@ namespace JollyRanchers{
 		public AudioClip loopSound;
 		public AudioClip winSound;
 		public AudioClip lossSound;
-		//public AudioClip collectSound;
+		public AudioClip collectSound;
+
+		public Sprite[] snowSprites;
+		public Sprite[] playerSprites;
 
 		private int spaceCount;
 
@@ -35,10 +38,12 @@ namespace JollyRanchers{
 		private float maxY = 420.0f;
 		private float dY = 140.0f;
 
+		private float covered = 0f;
+
 		private void Start(){			
 			// Difficulty
 			float difficulty = Managers.MinigamesManager.GetCurrentMinigameDifficulty();
-			snowCount = Mathf.CeilToInt(3.0f*difficulty + 2.0f);
+			snowCount = Mathf.CeilToInt(3.0f*difficulty - 0.5f) + 2;
 			// ------------------------------------------------------------------ //
 
 			UIText.text = $"Catch {snowCount} snow!";
@@ -58,7 +63,8 @@ namespace JollyRanchers{
 				GameObject newImageObject = new GameObject("Snow");
 				newImageObject.transform.SetParent(parent.transform, false);
 				Image newImage = newImageObject.AddComponent<Image>();
-				newImage.color = new Color(0.5f,0.5f,0.5f,1.0f);
+				newImage.sprite = snowSprites[0];
+
 				snow.Add(new WorldObject(
 					(524.0f * UnityEngine.Random.Range(0.0f,1.0f)) + 225.5f,
 					maxY + ((800.0f * i)/snowCount),
@@ -66,11 +72,11 @@ namespace JollyRanchers{
 				snow[i].move();
 			}
 
-			GameObject newPlrImageObject = new GameObject("Snow");
+			GameObject newPlrImageObject = new GameObject("Player");
 			newPlrImageObject.transform.SetParent(parent.transform, false);
 			Image newPlrImage = newPlrImageObject.AddComponent<Image>();
-			newPlrImage.color = new Color(1.0f,0.0f,0.0f,1.0f);
-			plr = new WorldObject(minX,minY,50.0f,50.0f,newPlrImage);
+			newPlrImage.sprite = playerSprites[0];
+			plr = new WorldObject(minX + ((maxX - minX) / 2.0f),minY,50.0f,50.0f,newPlrImage);
 			plr.move();
 		}
 
@@ -91,17 +97,37 @@ namespace JollyRanchers{
 					obj.move();
 
 					if(obj.collide(plr)){
-						//AudioSource collect = Managers.AudioManager.CreateAudioSource();
-						//collect.PlayOneShot(collectSound);
+						AudioSource collect = Managers.AudioManager.CreateAudioSource();
+						collect.PlayOneShot(collectSound);
 						obj.img.enabled = false;
 						obj.doCollide = false;
 						caught++;
+						covered = 20;
 					}
 
 					if(obj.y <= minY - obj.h){
 						isLoss = true;
 					}
 				}
+			}
+
+			if(x < 0f){
+				if(covered < 10f){
+					plr.img.sprite = playerSprites[1];
+				} else {
+					plr.img.sprite = playerSprites[3];
+				}
+			}
+			if(x > 0f){
+				if(covered < 10f){
+					plr.img.sprite = playerSprites[0];
+				} else {
+					plr.img.sprite = playerSprites[2];
+				}
+			}
+
+			if(covered > 10f){
+				covered = covered - (10.0f * Time.deltaTime);
 			}
 			// --------------------------------------------------- //
 

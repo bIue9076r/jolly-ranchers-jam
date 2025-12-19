@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 1409102171}
   - component: {fileID: 1409102170}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,10 +606,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 525829289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: 580, y: 290}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409102170
 MonoBehaviour:
@@ -631,7 +631,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2627542311559340657, guid: 1d477c9ffc8f0ff449046782f92a37a2,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -684,6 +685,14 @@ MonoBehaviour:
   loopSound: {fileID: 8300000, guid: 4abf22bbdf387144391c54df9ba368e1, type: 3}
   winSound: {fileID: 8300000, guid: 338661444fb70164d816238cbaa9fdfa, type: 3}
   lossSound: {fileID: 8300000, guid: c6daaa77a5f6a6540b9cd0b8c65d014f, type: 3}
+  collectSound: {fileID: 8300000, guid: 9be4511cc4c143d49ab717d25e56be2b, type: 3}
+  snowSprites:
+  - {fileID: 21300000, guid: 2a7d0ba34ff8ce1409c762c48f5fc2f7, type: 3}
+  playerSprites:
+  - {fileID: -5249762075863780043, guid: 36857c1b05e0d304483d41d611a265fa, type: 3}
+  - {fileID: -1609840683355844765, guid: 15ba9241d9b8e6b45bb7b1afa5864608, type: 3}
+  - {fileID: -3082779142354275226, guid: 1048b35249c3e0345aec3a7f96fbb467, type: 3}
+  - {fileID: 3150765295288638601, guid: de7113892475e274a98ea612b3bdea84, type: 3}
 --- !u!4 &2047592955
 Transform:
   m_ObjectHideFlags: 0
