@@ -353,7 +353,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text
+  m_text: 'Text
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80225151dd1ddff4f816c0141e4be81e, type: 2}
   m_sharedMaterial: {fileID: -4225209534364122888, guid: 80225151dd1ddff4f816c0141e4be81e,
@@ -687,12 +689,15 @@ MonoBehaviour:
   lossSound: {fileID: 8300000, guid: c6daaa77a5f6a6540b9cd0b8c65d014f, type: 3}
   collectSound: {fileID: 8300000, guid: 9be4511cc4c143d49ab717d25e56be2b, type: 3}
   snowSprites:
-  - {fileID: 21300000, guid: 2a7d0ba34ff8ce1409c762c48f5fc2f7, type: 3}
+  - {fileID: 1586257851774482145, guid: eacc2dec64d21a94ab398dc419e4b51e, type: 3}
+  - {fileID: 6369669841306234409, guid: fdf8d4b90be91b24690154b31661d14c, type: 3}
   playerSprites:
-  - {fileID: -5249762075863780043, guid: 36857c1b05e0d304483d41d611a265fa, type: 3}
-  - {fileID: -1609840683355844765, guid: 15ba9241d9b8e6b45bb7b1afa5864608, type: 3}
-  - {fileID: -3082779142354275226, guid: 1048b35249c3e0345aec3a7f96fbb467, type: 3}
-  - {fileID: 3150765295288638601, guid: de7113892475e274a98ea612b3bdea84, type: 3}
+  - {fileID: 6381279555431106912, guid: 13f19cf488a7f044eb098e23bbb3d1a2, type: 3}
+  - {fileID: -8840065096138404965, guid: f396d47e791b29247b86be5fda95ba58, type: 3}
+  - {fileID: 6099071595868568323, guid: 698d0893e50bbe14689c08dc7d53319a, type: 3}
+  - {fileID: -8838199244315567553, guid: 70c8f68147767d5418bcf125772844b9, type: 3}
+  - {fileID: 6325306595268762867, guid: e30824247e9c0d347ad3739cc5d7ea50, type: 3}
+  - {fileID: -832863679123129808, guid: 2f20ca62c08526146a1416bf89feedc1, type: 3}
 --- !u!4 &2047592955
 Transform:
   m_ObjectHideFlags: 0

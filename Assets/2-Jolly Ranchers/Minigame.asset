@@ -16,7 +16,7 @@ MonoBehaviour:
   minigameType: 0
   gameTime: 6857
   instruction: Catch!
-  title: Creative Name
+  title: Snow Fishing
   creditsText: '-- Programmers
 
     @le_banane
@@ -35,4 +35,5 @@ MonoBehaviour:
     --Music
 
     @le_banane'
-  minigameScreenshot: {fileID: 0}
+  minigameScreenshot: {fileID: -8908608794471759049, guid: 0143ff9b722743349a43fff6c046c864,
+    type: 3}
