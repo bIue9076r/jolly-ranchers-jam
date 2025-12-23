@@ -39,6 +39,7 @@ namespace JollyRanchers{
 		private float dY = 140.0f;
 
 		private float covered = 0f;
+		private float frame = 0f;
 
 		private void Start(){			
 			// Difficulty
@@ -76,32 +77,38 @@ namespace JollyRanchers{
 			newPlrImageObject.transform.SetParent(parent.transform, false);
 			Image newPlrImage = newPlrImageObject.AddComponent<Image>();
 			newPlrImage.sprite = playerSprites[0];
-			plr = new WorldObject(minX + ((maxX - minX) / 2.0f),minY,50.0f,50.0f,newPlrImage);
+			plr = new WorldObject(minX + ((maxX - minX) / 2.0f),minY + 35.0f,100.0f,100.0f,newPlrImage);
 			plr.move();
 		}
 
 		private void Update(){
 			// move player around
 			float x = Time.deltaTime * dX * Input.GetAxis("Horizontal");
+			float cx = x;
 			if(wrld.collideWorldBorder_X(plr.x + x)){
 				x = 0.0f;
 			}
 			plr.x = plr.x + x;
 			plr.move();
 
-			if(x < 0f){
-				if(covered < 10f){
-					plr.img.sprite = playerSprites[1];
-				} else {
-					plr.img.sprite = playerSprites[3];
-				}
+			if(covered < 10f){
+				plr.img.sprite = playerSprites[0];
 			}
-			if(x > 0f){
-				if(covered < 10f){
-					plr.img.sprite = playerSprites[0];
-				} else {
-					plr.img.sprite = playerSprites[2];
-				}
+
+			if(cx < 0f){
+				covered = 0f;
+				int f = Mathf.CeilToInt(frame % 2f);
+				plr.img.sprite = playerSprites[3 + f];
+				frame = frame + (4 * Time.deltaTime);
+			}
+			if(cx > 0f){
+				covered = 0f;
+				int f = Mathf.CeilToInt(frame % 2f);
+				plr.img.sprite = playerSprites[1 + f];
+				frame = frame + (4 * Time.deltaTime);
+			}
+			if(cx == 0f){
+				frame = 0f;
 			}
 
 			// Move snow around
@@ -118,12 +125,7 @@ namespace JollyRanchers{
 						obj.doCollide = false;
 						caught++;
 						covered = 20;
-						if(plr.img.sprite == playerSprites[0]){
-							plr.img.sprite = playerSprites[2];
-						}
-						if(plr.img.sprite == playerSprites[1]){
-							plr.img.sprite = playerSprites[3];
-						}
+						plr.img.sprite = playerSprites[1];
 					}
 
 					if(obj.y <= minY - obj.h){
